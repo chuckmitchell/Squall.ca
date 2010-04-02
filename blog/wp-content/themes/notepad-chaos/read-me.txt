@@ -1,0 +1,19 @@
+Smashing Magazine
+http://www.smashingmagazine.com
+we smash you with the information that will make your life easier. really.
+
+Part One - Installation Instructions:
+
+1. Upload the theme to your /wp-content/themes/ directory.
+2. Now go to design -> themes and activate the theme.
+
+Part Two - Setting up the Main Navigation
+
+Before setting up the navigation, create an archives page in your admin panel (you should have two pages "about" & "archives"). Write down the ID that you can see at the end of each page url when hovering over it.
+Open the navigation.php file located in /themes/notepad-chaos/navigation.php. You will find a page id at the end inside of every href attribute. Change the id that accords with your pages. Save the file.
+
+Part Three - Using a Thumbnail Image within a Post
+
+A normal post contains a custom field. The name of the custom field is "thumbnail". When writing a post, create a custom field with a key of thumbnail and a value of the image path, e.g. <img src="images/thumb_s0.jpg" alt="" />
+
+Brought to you by Smashing Magazine (www.smashingmagazine.com).

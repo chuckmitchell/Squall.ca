@@ -1,0 +1,1 @@
+document.write('<font face="Arial,Helvetica,sans-serif" size="-2" color="#e9e9e9"> Artwork courtesy of Jeannie Taylor - Photos Copyright &copy; 2007, ACCM</font><img src="images/trans.gif" width="7" height="1" border="0">')
