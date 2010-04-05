@@ -1,13 +1,6 @@
-<?php //require_once('../lib/magpie/rss_fetch.inc');
-      //$url = "http://www.google.com/reader/public/atom/user%2F05206281886015490759%2Fstate%2Fcom.google%2Fbroadcast";
-      //$rss = fetch_rss($url); 
-
-	require_once('../lib/magpie/rss_fetch.inc');
-	define('MAGPIE_CACHE_DIR', '/tmp/magpie_cache');
-	$url = 'http://www.google.com/reader/public/atom/user%2F05206281886015490759%2Fstate%2Fcom.google%2Fbroadcast';
-	$rss = fetch_rss( $url );
-
-
+<?php 
+      require_once('../lib/simplepie/simplepie.inc');
+      $feed = new SimplePie('http://www.google.com/reader/public/atom/user%2F05206281886015490759%2Fstate%2Fcom.google%2Fbroadcast', '../cache');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -25,16 +18,25 @@
      <p>I use <a href="http://www.google.com/reader">Google Reader</a>, and share the stuff that I want people to think I'm interested in ;)</p>
 
      
+<div class="header">
+	<h1><a href="<?php echo $feed->get_permalink(); ?>"><?php echo $feed->get_title(); ?></a></h1>
+	<p><?php echo $feed->get_description(); ?></p>
+	</div>
+ 
 	<?php
-	  echo "Channel Title: " . $rss->channel['title'] . "<p>";
-	  echo "<ul>";
-	  foreach ($rss->items as $item) {
-		  $href = $item['link'];
-		  $title = $item['title'];
-		  echo "<li><a href=$href>$title</a></li>";
-	  }
-	  echo "</ul>";
+	/*
+	Here, we'll loop through all of the items in the feed, and $item represents the current item in the loop.
+	*/
+	foreach ($feed->get_items() as $item):
 	?>
+ 
+		<div class="item">
+			<h2><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h2>
+			<p><?php echo $item->get_description(); ?></p>
+			<p><small>Posted on <?php echo $item->get_date('j F Y | g:i a'); ?></small></p>
+		</div>
+ 
+	<?php endforeach; ?>
 
 </body>
 </html>
