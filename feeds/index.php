@@ -2,8 +2,9 @@
       //$url = "http://www.google.com/reader/public/atom/user%2F05206281886015490759%2Fstate%2Fcom.google%2Fbroadcast";
       //$rss = fetch_rss($url); 
 
-	require_once('../lib/rss_fetch.inc');
-	$url = $_GET['http://www.google.com/reader/public/atom/user%2F05206281886015490759%2Fstate%2Fcom.google%2Fbroadcast'];
+	require_once('../lib/magpie/rss_fetch.inc');
+	define('MAGPIE_CACHE_DIR', '/tmp/magpie_cache');
+	$url = 'http://www.google.com/reader/public/atom/user%2F05206281886015490759%2Fstate%2Fcom.google%2Fbroadcast';
 	$rss = fetch_rss( $url );
 
 
