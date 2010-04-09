@@ -38,10 +38,11 @@
     <img src="/images/clouds_right.png" alt="clouds" />
   </div>
 
+<!--
   <div id="sky-patch">
     <img src="tmp/sky.jpg" alt="sky" />
   </div>
-
+-->
 
   <div id="main" >
     <div id="main-intro">
