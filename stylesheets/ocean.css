@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+}
+
+div#lighthouse {
+  position:absolute;
+  top:0px;
+  left:-20px;
+  width:300px;
+  height:90;
+  z-index:0;
+}
+
+div#clouds-left {
+  position:absolute;
+  top:-50px;
+  left:0px;
+  z-index:1;
+}
+
+div#clouds-right {
+  position:absolute;
+  top:-42px;
+  left:570px;
+  z-index:1;
+}
+
+div#sky-patch {
+  position:absolute;
+  top:0px;
+  left:970px;
+  z-index:2;
+}
+
+
+
+
+div#main {
+  position:absolute;
+  top:120px;
+  padding: 100px 0 0 50px;
+  z-index:1;
+  height: 100%;
+  width:100%;
+  background-image:url(/images/simple_ocean_trans.png);
+
+}
