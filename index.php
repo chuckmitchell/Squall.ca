@@ -1,16 +1,3 @@
-<?php 
-
-
-
-  function getSkyColor() {
-    $ave=`convert tmp/sky.jpg -filter box -resize 1x1! -format "%[pixel:u]" info:`;
-
-    echo $ave;
-    
-
-  }
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,7 +10,7 @@
 
 </head>
 
-<body style="background-color:<?php getSkyColor(); ?>;" />
+<body style="background-color:<?php echo `cat ./tmp/sky_color.txt` ?>;" />
   
   <div id="clouds-left">
     <img src="/images/clouds_left.png" alt="clouds" />

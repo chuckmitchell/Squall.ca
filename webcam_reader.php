@@ -39,8 +39,9 @@
   //Grab a chunk of sky to match the background
   $sky_piece =  imagecreatetruecolor($sky_block_width, $sky_block_height);
   imagecopy($sky_piece, $cropped_image, 0, 0, $sky_block_x, $sky_block_y, $sky_block_width, $sky_block_height);
-  imagejpeg($sky_piece, "tmp/sky.jpg");
-  
+  imagejpeg($sky_piece, "./tmp/sky.jpg");
+  `convert tmp/sky.jpg -filter box -resize 1x1! -format "%[pixel:u]" info: > ./tmp/sky_color.txt`;
+
   header('Content-Type: image/jpeg');
   imagejpeg($cropped_image, NULL, 100);
   
