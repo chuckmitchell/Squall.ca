@@ -5,7 +5,6 @@ body {
 	font-size: 76%;/* font sizing in ems, baby. if you want to change anything, just change this.*/
 	/*funny thing happens at 75% and lower. opera goes to a nice small size, but moz and ie pc change almost not at all. seems 76% is as small as you can go and stay the same across browsers. poop.*/
 	color: #fff;
-	background-image: url(http://www.thenoodleincident.com/img/_.gif);/*these three lines replace the n4_upgrade.gif in n4.css. and if you use this code, make sure you point to an img on _your_ server, not mine.*/
 	background-repeat: no-repeat;
 	background-position: top left;
 	}

@@ -4,6 +4,10 @@
 body {
 }
 
+ul {
+  list-style-image:url("/images/starfish_bullet.png");
+}
+
 div#lighthouse {
   position:absolute;
   top:0px;
@@ -34,8 +38,10 @@ div#sky-patch {
   z-index:2;
 }
 
-
-
+div#copyright {
+  font-size:0.7em;
+  color:#5FC0CE;
+}
 
 div#main {
   position:absolute;
