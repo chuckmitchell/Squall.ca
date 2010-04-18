@@ -1,6 +1,6 @@
 <?php 
       require_once('../lib/simplepie/simplepie.inc');
-      $feed = new SimplePie('http://www.google.com/reader/public/atom/user%2F05206281886015490759%2Fstate%2Fcom.google%2Fbroadcast', '../cache');
+      $feed = new SimplePie('http://www.google.com/reader/public/atom/user%2F05206281886015490759%2Fstate%2Fcom.google%2Fbroadcast', '../tmp');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
