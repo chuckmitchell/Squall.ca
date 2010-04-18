@@ -27,7 +27,7 @@ div#clouds-left {
 div#clouds-right {
   position:absolute;
   top:-42px;
-  left:570px;
+  left:530px;
   z-index:1;
 }
 
