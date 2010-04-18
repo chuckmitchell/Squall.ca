@@ -1,9 +1,18 @@
+<?php require_once 'webcam_reader.php' ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="google-site-verification" content="1RQ6OhEs1ucjSvlyM3DbSvy5LhewGh01h431I0I4Egk" />
+<meta description="Personal site of Charles Mitchell, web developer" />
+<meta keywords="web developer, web development, programming, montreal, canada, montreal film night" />
 
 <title>Squall.ca by Charles Mitchell</title>
+
+<script src="http://www.google.com/jsapi?key=ABQIAAAASIifs-jrzJ1RJutsQd5ixBRpiG1VhV31beXX970pgWcqlx5KLhRd7_VofkuuWTlgWbEJ17j7F9QPWA" type="text/javascript"></script>
+<script language="Javascript" type="text/javascript">
+  google.load("jquery", "1.4.2");
+</script>
 
 <link rel="stylesheet" type="text/css" href="/stylesheets/real.css" />
 <link rel="stylesheet" type="text/css" href="/stylesheets/ocean.css" />
@@ -18,7 +27,7 @@
 
 
   <div id="lighthouse">
-    <img src="webcam_reader.php" alt="Peggy's cove" />
+    <img src="/tmp/cropped_peggy.jpg" alt="Peggy's cove" />
   </div>
 
   <div id="clouds-right">
@@ -50,6 +59,7 @@
 
     </div>
     <div id="main-context">
+      <p>Charles Mitchell is a web developer living in Montreal Canada.</p>
       <p>Squall.ca is a personal project to let Charles play around with stuff on the web.<br />
          If you have any comments or suggestions, please drop me a line at <a href="mailto:chuckmitchell@gmail.com">chuckmitchell@gmail.com</a>        </p>
     </div>
@@ -57,7 +67,6 @@
       <p>2009 &copy; Charles Mitchell</p>
     </div>
   </div>
-  
   
   <?php include("_google_analytics.html") ?>
 
