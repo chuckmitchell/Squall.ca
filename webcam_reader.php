@@ -16,7 +16,7 @@
   $url='http://cams.halifaxwebcam.ca/cam10/current.jpg';
   $file = 'tmp/peggy.jpg';
   $cropped_width = 800;
-  $cropped_height = 200;
+  $cropped_height = 205;
   $crop_start_x = 60;
   $crop_start_y = 140;
 
@@ -40,11 +40,14 @@
   $sky_piece =  imagecreatetruecolor($sky_block_width, $sky_block_height);
   imagecopy($sky_piece, $cropped_image, 0, 0, $sky_block_x, $sky_block_y, $sky_block_width, $sky_block_height);
   imagejpeg($sky_piece, "./tmp/sky.jpg");
+  //use imagemagick reduce to one average color pixel and qrite that pixel value to file in form rgb(rr,gg,bb)
   `convert tmp/sky.jpg -filter box -resize 1x1! -format "%[pixel:u]" info: > ./tmp/sky_color.txt`;
 
-  header('Content-Type: image/jpeg');
-  imagejpeg($cropped_image, NULL, 100);
-  
+  //Write cropped image to file
+  $file = './tmp/cropped_peggy.jpg';
+  imagejpeg($cropped_image, $file, 100);
+
+
   imagedestroy($source_image);
   imagedestroy($sky_piece);
   imagedestroy($cropped_image);
