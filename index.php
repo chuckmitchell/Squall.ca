@@ -61,7 +61,7 @@
     <div id="main-context">
       <p>Charles Mitchell is a web developer living in Montreal Canada.</p>
       <p>Squall.ca is a personal project to let Charles play around with stuff on the web.<br />
-         If you have any comments or suggestions, please drop me a line at <a href="mailto:chuckmitchell@gmail.com">chuckmitchell@gmail.com</a>        </p>
+         If you have any comments or suggestions, please drop me a line at <a href="mailto:chuckmitchell@gmail.com">chuckmitchell@squall.ca</a>        </p>
     </div>
     <div id="copyright">
       <p>2009 &copy; Charles Mitchell</p>
