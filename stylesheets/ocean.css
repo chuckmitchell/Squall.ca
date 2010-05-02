@@ -8,6 +8,11 @@ ul {
   list-style-image:url("/images/starfish_bullet.png");
 }
 
+div#squid {
+  position: absolute;
+  right: 20%;  
+}
+
 div#lighthouse {
   position:absolute;
   top:0px;
@@ -46,7 +51,8 @@ div#copyright {
 div#main {
   position:absolute;
   top:120px;
-  padding: 100px 0 0 50px;
+  margin:0 0;
+  padding: 100px 50px 0 50px;
   z-index:1;
   height: 100%;
   width:100%;

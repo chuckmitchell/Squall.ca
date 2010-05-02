@@ -42,6 +42,16 @@
 
   <div id="main" >
     <div id="main-intro">
+
+        <pre>
+                       _ _
+ ___  __ _ _   _  __ _| | |  ___ __ _
+/ __|/ _` | | | |/ _` | | | / __/ _` |
+\__ \ (_| | |_| | (_| | | || (_| (_| |
+|___/\__, |\__,_|\__,_|_|_(_)___\__,_|
+        |_|
+
+	</pre>
         <h1>Squall.ca by Charles Mitchell</h1>
         
         <p>You've arrived on my landing page, How can I help?</p>
@@ -66,8 +76,27 @@
     <div id="copyright">
       <p>2009 &copy; Charles Mitchell</p>
     </div>
+ 
+
+  <div id="squid" style="float:right">	
+  <pre>
+     ^
+   /   \
+  /     \
+  \     /
+   |   |
+   |   |
+   | 0 |
+  // ||\\
+ (( // ||
+  \\))  \\
+  //||   ))
+ ( ))   //
+   //   ((
+  </pre>
   </div>
-  
+</div>
+
   <?php include("_google_analytics.html") ?>
 
 </body>
