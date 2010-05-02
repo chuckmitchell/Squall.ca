@@ -1,0 +1,96 @@
+<?php @session_start();?>
+<html>
+<head>
+    <?php include ('connection.php');?>
+<script type="text/javascript" src="calendarDateInput.js"></script>
+
+	<title>Panel - Add New Clients</title>
+	<style>table {
+font-family: cursive;
+font-size: small;}
+td{	text-align: left;}</style>
+</head>
+<body style="color:white; font-size:16px; background:url(images/wallpaper.jpg); background-attachment:fixed;" link="#00001f" alink="#00003f"  vlink="00003f">
+<?php
+	if (!isset($_SESSION['user']))
+	{?>
+	<font color='red'>Sorry, you do not have access to this page!</font>
+<?php	}
+	else
+	{?>
+
+<center>	<img src="images/logo.jpg" alt="rasyeklogo" /></center><br />
+		<script type='text/javascript'>
+
+function Go(){return}
+
+</script>
+<script type='text/javascript' src='exmplmenu_var.js'></script>
+<script type='text/javascript' src='menu_com.js'></script>
+<noscript>Your browser does not support script</noscript>
+
+
+<br /><br />
+
+<fieldset>
+			<?php
+
+				if (!$_POST)
+				{?>
+			<center>
+				  <h2>Add New Clients</h2>
+
+  <form id="myform" enctype="multipart/form-data" name="myform" action="<?= $_SERVER['PHP_SELF']?>" method="POST">
+<table width="100%" border="1">
+
+				    <tr>
+				      <th width="108" scope="row">Client Name:</th>
+				      <td width="219">
+                                        <input type="text" style="width:100%;" name="username" id="username" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+				      <th width="108" scope="row">Client Email:</th>
+				      <td width="219">
+                                        <input type="text" style="width:100%;" name="emailaddress" id="emailaddress" />
+                                      </td>
+                                    </tr>
+                                    
+</table>
+
+<div class="form-row">
+				<div class="field-widget">
+			<input style="color:red;" type="submit" id="submit" name="submit" value="Add Client" />
+			</div>
+	</div>
+  </form>
+  </center>
+				<?php
+					}
+					else if ($_POST)
+					{
+					   $username = $_POST['username'];
+                                           $email = $_POST['emailaddress'];
+					   $query = mysql_query("INSERT INTO clients(`name`,`emailaddress`) VALUES('$username','$email')") or die (mysql_error($link));
+
+					   echo "* Client Added Successfully!!";
+                                           			echo "<script type='text/javascript'>
+		  				window.location = 'client-management.php';
+  				</script>";
+        ?>
+        <br />
+
+		<?php
+                    }
+                    			?>
+
+
+
+
+
+
+</fieldset>
+<?php	} ?>
+
+</body>
+</html>
