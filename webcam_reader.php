@@ -1,5 +1,10 @@
 <?php
 
+  function save_image_chuck($image) {
+    
+
+  }
+
   function save_image($source_url, $save_file) {
     $ch = curl_init ($source_url); 
     curl_setopt($ch, CURLOPT_HEADER, 0); 
@@ -20,10 +25,20 @@
   $crop_start_x = 60;
   $crop_start_y = 140;
 
-  $sky_block_x = 600;
-  $sky_block_y = 0;
-  $sky_block_width = 50;
-  $sky_block_height = 50;
+  $sky_block1_x = 380;
+  $sky_block1_y = 70;
+  $sky_block1_width = 25;
+  $sky_block1_height = 25;
+
+  $sky_block2_x = 600;
+  $sky_block2_y = 68;
+  $sky_block2_width = 67;
+  $sky_block2_height = 67;
+
+  $sky_block3_x = 600;
+  $sky_block3_y = 134;
+  $sky_block3_width = 67;
+  $sky_block3_height = 67;
 
   save_image($url,$file);
   //`convert -blur 1 $file $file`;
@@ -37,11 +52,23 @@
   imagecopy($cropped_image, $source_image, 0, 0, $crop_start_x, $crop_start_y, $cropped_width, $cropped_height);
 
   //Grab a chunk of sky to match the background
-  $sky_piece =  imagecreatetruecolor($sky_block_width, $sky_block_height);
-  imagecopy($sky_piece, $cropped_image, 0, 0, $sky_block_x, $sky_block_y, $sky_block_width, $sky_block_height);
-  imagejpeg($sky_piece, "./tmp/sky.jpg");
+  $sky_piece1 =  imagecreatetruecolor($sky_block1_width, $sky_block1_height);
+  $sky_piece2 =  imagecreatetruecolor($sky_block2_width, $sky_block2_height);
+  $sky_piece3 =  imagecreatetruecolor($sky_block3_width, $sky_block3_height);
+
+  imagecopy($sky_piece1, $cropped_image, 0, 0, $sky_block1_x, $sky_block1_y, $sky_block1_width, $sky_block1_height);
+  imagecopy($sky_piece2, $cropped_image, 0, 0, $sky_block2_x, $sky_block2_y, $sky_block2_width, $sky_block2_height);
+  imagecopy($sky_piece3, $cropped_image, 0, 0, $sky_block3_x, $sky_block3_y, $sky_block3_width, $sky_block3_height);
+  
+
+  imagejpeg($sky_piece1, "./tmp/sky1.jpg");
+  imagejpeg($sky_piece2, "./tmp/sky2.jpg");
+  imagejpeg($sky_piece3, "./tmp/sky3.jpg");
+
   //use imagemagick reduce to one average color pixel and qrite that pixel value to file in form rgb(rr,gg,bb)
-  `convert tmp/sky.jpg -filter box -resize 1x1! -format "%[pixel:u]" info: > ./tmp/sky_color.txt`;
+  `convert tmp/sky1.jpg -filter box -resize 1x1! -format "%[pixel:u]" info: > ./tmp/sky1_color.txt`;
+  `convert tmp/sky2.jpg -filter box -resize 1x1! -format "%[pixel:u]" info: > ./tmp/sky2_color.txt`;
+  `convert tmp/sky3.jpg -filter box -resize 1x1! -format "%[pixel:u]" info: > ./tmp/sky3_color.txt`;
 
   //Write cropped image to file
   $file = './tmp/cropped_peggy.jpg';
@@ -49,7 +76,9 @@
 
 
   imagedestroy($source_image);
-  imagedestroy($sky_piece);
+  imagedestroy($sky_piece1);
+  imagedestroy($sky_piece2);
+  imagedestroy($sky_piece3);
   imagedestroy($cropped_image);
 
 
