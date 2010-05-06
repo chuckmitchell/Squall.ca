@@ -8,6 +8,36 @@ ul {
   list-style-image:url("/images/starfish_bullet.png");
 }
 
+div.skybar {
+ 
+left: 0px;
+  height: 105px;
+  width: 100%;
+  position:absolute;
+  margin: 0px;
+  padding: 0px;
+  z-index: -1;  
+}
+div#sky1 {
+  top: 0px;
+  position:absolute;
+  
+}
+div#sky2 {
+  display: none;
+  top:106px;
+  position:absolute;
+  
+}
+div#sky3 {
+  
+  top: 106px;
+  position:absolute;
+
+}
+
+
+
 div#squid {
   position: absolute;
   right: 20%;  
@@ -52,10 +82,20 @@ div#main {
   position:absolute;
   top:120px;
   margin:0 0;
-  padding: 100px 50px 0 50px;
+  padding: 100px 0 0 0;
   z-index:1;
   height: 100%;
   width:100%;
-  background-image:url(/images/simple_ocean_trans.png);
+  background-image: url(/images/simple_ocean_trans.png);
+  background-repeat:repeat-x;
+  
 
+
+
+
+}
+
+div#main-intro h1 {
+  margin: -35px 0 0 0;
+  padding: 0 87px 0 0;
 }

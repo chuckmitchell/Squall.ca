@@ -19,7 +19,13 @@
 
 </head>
 
-<body style="background-color:<?php echo `cat ./tmp/sky_color.txt` ?>;" />
+<body style="background-color:<?php echo `cat ./tmp/sky3_color.txt` ?>;" />
+
+
+  <div class="skybar" id="sky1" style="background-color:<?php echo `cat ./tmp/sky1_color.txt` ?>;"></div>
+  <div class="skybar" id="sky2" style="background-color:<?php echo `cat ./tmp/sky2_color.txt` ?>;"></div>
+  <div class="skybar" id="sky3" style="background-color:<?php echo `cat ./tmp/sky3_color.txt` ?>;"></div>
+  
   
   <div id="clouds-left">
     <img src="/images/clouds_left.png" alt="clouds" />
@@ -43,14 +49,13 @@
   <div id="main" >
     <div id="main-intro">
 
-        <pre>
+<pre>
                        _ _
  ___  __ _ _   _  __ _| | |  ___ __ _
 / __|/ _` | | | |/ _` | | | / __/ _` |
 \__ \ (_| | |_| | (_| | | || (_| (_| |
 |___/\__, |\__,_|\__,_|_|_(_)___\__,_|
         |_|
-
 	</pre>
         <h1>Squall.ca by Charles Mitchell</h1>
         
@@ -78,7 +83,7 @@
     </div>
  
 
-  <div id="squid" style="float:right">	
+  <div id="squid" style="">	
   <pre>
      ^
    /   \
