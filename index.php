@@ -105,7 +105,5 @@
   <?php include("_google_analytics.html") ?>
 
 </body>
-
-
-
 </html>
+
