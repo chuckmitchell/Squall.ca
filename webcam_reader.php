@@ -19,7 +19,7 @@
   }
   
   $url='http://cams.halifaxwebcam.ca/cam10/current.jpg';
-  $file = 'tmp/peggy.jpg';
+  $file = './tmp/peggy.jpg';
   $cropped_width = 800;
   $cropped_height = 205;
   $crop_start_x = 60;
