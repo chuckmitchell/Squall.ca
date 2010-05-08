@@ -1,0 +1,7 @@
+AuthUserFile /home/chuckmitchell/squall.ca/sudoku/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Restricted Access"
+AuthType Basic
+<Limit GET>
+require user lefteris
+</Limit>

@@ -1,0 +1,182 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>SuDoKu</title>
+
+<link href="CSS/cssN.css" rel="stylesheet" type="text/css" title="skin1" />
+<link href="CSS/cssNI.css" rel="alternate stylesheet" type="text/css" title="skin2" />
+
+<style>
+input{
+ text-align:center;
+}
+
+</style>
+
+
+<script type="text/javascript" src="sudoku.js">
+</script>
+
+</head>
+
+<body onload="javascript:setDiff(1);">
+
+
+<label for="11"></label>
+<table width="660" border="0" class="Header">
+
+<tr>
+  <td align="center">
+<pre>
+               _       _          
+ ___ _   _  __| | ___ | | ___   _ 
+/ __| | | |/ _` |/ _ \| |/ / | | |
+\__ \ |_| | (_| | (_) |   <| |_| |
+|___/\__,_|\__,_|\___/|_|\_\\__,_|
+                                 
+</pre>
+  </td>
+  </tr>
+</table>
+
+<form action="" method="post" name="form1" class="tbox2" id="form1">
+<table width="666" border="0">
+<tr>
+<td width="660" height="519"><table width="649" height="503" border="0" class="layout">
+<tr>
+<td width="10" rowspan="9" bgcolor="#330066" class="border">&nbsp;</td>
+<td width="9">&nbsp;</td>
+<td width="327" rowspan="9">
+
+<script type="text/javascript">
+
+
+document.write('<table width="332" height="337" border="1" class="tbox">');
+y = 0;
+
+for ( u=0;u<3;u++) {
+
+document.write('<tr>');
+for ( s=0;s<3;s++) { 
+
+document.write('<td><table width="89" border="0">');
+
+for ( r=0;r<3;r++) {  
+document.write('<tr>');
+for ( c=0;c<3;c++) 
+{  
+
+document.write('<td width="25"><input name="box'+y+'" type="text" class="tbox2" size="4" id="'+ y+'" VALUE="" maxlength="1" onchange="this.style.color=\'black\';if (puzzleFull()){finishCheck();};" onclick="boxSelect('+y+');" style="cursor:pointer" /></td>');
+y++;
+}
+
+document.write('</tr>');
+}
+
+document.write('</table></td>');
+}
+document.write('</tr>');
+}
+document.write('</tr>');
+document.write('</table>');
+
+</script></td>
+<td width="3" rowspan="9">&nbsp;</td>
+<td height="26" colspan="3"><p align="left">TIMER:</p>            </td>
+<td width="48" class="style2">&nbsp;</td>
+<td width="12" rowspan="9" bgcolor="#330066" class="border">&nbsp;</td>
+</tr>
+<tr>
+<td width="9">&nbsp;</td>
+<td height="42" colspan="3" class="buttons style3"><input name="timer" type="text" class="dropD" id="timer" value="0" /></td>
+<td width="48" class="style2">&nbsp;</td>
+</tr>
+<tr>
+<td width="9" rowspan="2">&nbsp;</td>
+<td height="32" colspan="3"><p align="left">Difficulty:
+
+</p>            </td>
+<td width="48" rowspan="2" class="style2">&nbsp;</td>
+</tr>
+<tr>
+<td width="76" height="32"><input type='radio' name="difficulty" onclick="setDiff(1)" value='1' checked="true" />Easy</td>
+<td width="55"><input type='radio' name="difficulty" onclick="setDiff(2)" value='2' />Normal</td>
+<td height="32"><input type='radio' name="difficulty" onclick="setDiff(3)" value='2' />Hard</td>
+</tr>
+<tr>
+<td width="9">&nbsp;</td>
+<td height="116" colspan="3"><table width="237" border="1" class="buttons">
+<tr>
+<td width="227">
+<div align="center"><span class="buttons"><input type="button" onclick="start()" value="START" /></span></div></td>
+</tr>
+<tr>
+<td><input type="button" onclick="getHint()" style="" value="HINT" /></td>
+</tr>
+<tr>
+<td><input type="button" onclick="solve()" value="SOLVE" /></td>
+</tr>
+<tr>
+<td><input type="button"  onclick="check()" value="CHECK" /></td>
+</tr>
+<tr>
+<td><input type="button"  onclick="newGame()" value="NEW GAME" /></td>
+</tr>
+</table>          
+<div align="center"></div>
+<div align="center"></div>
+<label for="select"></label>
+<div align="center"></div></td>
+<td width="48" class="style2">&nbsp;</td>
+</tr>
+<tr>
+<td width="9">&nbsp;</td>
+<td height="33" colspan="3"><div align="left">SCORE:</div></td>
+<td width="48" class="style2">&nbsp;</td>
+</tr>
+<tr>
+<td width="9" rowspan="2">&nbsp;</td>
+<td height="1" colspan="3" class="buttons"><input name="score" disabled="true" id="score" align="left" value="0" /></td>
+<td width="48" rowspan="2" class="style2">&nbsp;</td>
+</tr>
+<tr>
+<td height="1" colspan="3"><div align="left" class="cssSwitch">Change style:</div></td>
+</tr>
+<tr>
+<td width="9">&nbsp;</td>
+<td height="38" colspan="2" class="cssSwitch"><p><input type="button" onclick="switchStyleSheetGecko(1)" value="NORMAL" /></p></td>
+<td width="82" class="cssSwitch"><p><input type="button" onclick="switchStyleSheetGecko(2)" value="INVERTED" /></p></td>
+<td width="48" class="style2">&nbsp;</td>
+</tr>
+<tr>
+<td height="92" colspan="9" class="dropD"><label for="puzzleText" class="puzzleText">
+<div align="left"><br />
+<span class="style1">Puzzle:</span></div>
+</label>
+<p>
+<input name="puzzleText" type="text" class="puzzleText" id="puzzleText" value="" size="115" />
+</p>
+</td>
+</tr>
+</table></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
