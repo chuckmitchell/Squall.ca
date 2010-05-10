@@ -1,182 +1,242 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+ 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>SuDoKu</title>
+  <title>Sudoku</title>
 
-<link href="CSS/cssN.css" rel="stylesheet" type="text/css" title="skin1" />
-<link href="CSS/cssNI.css" rel="alternate stylesheet" type="text/css" title="skin2" />
+  <link rel="stylesheet" type="text/css" media="all" href="CSS/reset.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="CSS/text.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="CSS/960.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="CSS/game.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="CSS/sudoku.css" title="skin1" />
+  <link rel="alternate stylesheet" type="text/css" media="all" href="CSS/sudoku_accessable.css" title="skin2" />
+  
 
-<style>
-input{
- text-align:center;
-}
-
-</style>
-
-
-<script type="text/javascript" src="sudoku.js">
-</script>
+  <script type="text/javascript" language="javascript" src="sudoku.js" ></script>
 
 </head>
 
 <body onload="javascript:setDiff(1);">
 
+<div id="content" class="container_16">
 
-<label for="11"></label>
-<table width="660" border="0" class="Header">
+  <div id="header" class="grid_16">
+    <pre>
+                 _       _          
+   ___ _   _  __| | ___ | | ___   _ 
+  / __| | | |/ _` |/ _ \| |/ / | | |
+  \__ \ |_| | (_| | (_) |   <| |_| |
+  |___/\__,_|\__,_|\___/|_|\_\\__,_|
+    </pre>
+  </div>
+  <div class="clear"></div>
 
-<tr>
-  <td align="center">
-<pre>
-               _       _          
- ___ _   _  __| | ___ | | ___   _ 
-/ __| | | |/ _` |/ _ \| |/ / | | |
-\__ \ |_| | (_| | (_) |   <| |_| |
-|___/\__,_|\__,_|\___/|_|\_\\__,_|
-                                 
-</pre>
-  </td>
-  </tr>
-</table>
+<!--  <div class="grid_2">
+    <p>left</p>
+  </div>-->
 
-<form action="" method="post" name="form1" class="tbox2" id="form1">
-<table width="666" border="0">
-<tr>
-<td width="660" height="519"><table width="649" height="503" border="0" class="layout">
-<tr>
-<td width="10" rowspan="9" bgcolor="#330066" class="border">&nbsp;</td>
-<td width="9">&nbsp;</td>
-<td width="327" rowspan="9">
+  <form action="" method="post" name="form1" id="form1">
+  <div class="grid_9">
+    <div id="game" class="">
+      <div class="section" id="section_1">       
+        <input class="box" name="box0" size="1" id="0" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('0');" />
+        <input class="box" name="box1" size="1" id="1" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('1');" />
+        <input class="box" name="box2" size="1" id="2" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('2');" />
+        <br />
 
-<script type="text/javascript">
+        <input class="box" name="box3" size="1" id="3" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('3');" />
+        <input class="box" name="box4" size="1" id="4" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('4');" />
+        <input class="box" name="box5" size="1" id="5" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('5');" />
+        <br />
+
+        <input class="box" name="box6" size="1" id="6" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('6');" />
+        <input class="box" name="box7" size="1" id="7" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('7');" />
+        <input class="box" name="box8" size="1" id="8" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('8');" />
+      </div>
+      <div class="section" id="section_2">
+        <input class="box" name="box9" size="1" id="9" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('9');" />
+        <input class="box" name="box10" size="1" id="10" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('10');" />
+        <input class="box" name="box11" size="1" id="11" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('11');" />
+        <br />
+
+        <input class="box" name="box12" size="1" id="12" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('12');" />
+        <input class="box" name="box13" size="1" id="13" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('13');" />
+        <input class="box" name="box14" size="1" id="14" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('14');" />
+        <br />
+
+        <input class="box" name="box15" size="1" id="15" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('15');" />
+        <input class="box" name="box16" size="1" id="16" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('16');" />
+        <input class="box" name="box17" size="1" id="17" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('17');" />
+      </div>
+
+      <div class="section" id="section_3">
+        <input class="box" name="box18" size="1" id="18" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('18');" />
+        <input class="box" name="box19" size="1" id="19" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('19');" />
+        <input class="box" name="box20" size="1" id="20" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('20');" />
+        <br />
+
+        <input class="box" name="box21" size="1" id="21" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('21');" />
+        <input class="box" name="box22" size="1" id="22" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('22');" />
+        <input class="box" name="box23" size="1" id="23" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('23');" />
+        <br />
+
+        <input class="box" name="box24" size="1" id="24" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('24');" />
+        <input class="box" name="box25" size="1" id="25" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('25');" />
+        <input class="box" name="box26" size="1" id="26" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('26');" />
+      </div>
+      
+
+      <div class="section" id="section_4">
+        <input class="box" name="box27" size="1" id="27" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('27');" />
+        <input class="box" name="box28" size="1" id="28" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('28');" />
+        <input class="box" name="box29" size="1" id="29" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('29');" />
+        <br />
+
+        <input class="box" name="box30" size="1" id="30" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('30');" />
+        <input class="box" name="box31" size="1" id="31" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('31');" />
+        <input class="box" name="box32" size="1" id="32" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('32');" />
+        <br />
+
+        <input class="box" name="box33" size="1" id="33" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('33');" />
+        <input class="box" name="box34" size="1" id="34" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('34');" />
+        <input class="box" name="box35" size="1" id="35" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('35');" />
+      </div>
+
+      <div class="section" id="section_5">
+        <input class="box" name="box36" size="1" id="36" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('36');" />
+        <input class="box" name="box37" size="1" id="37" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('37');" />
+        <input class="box" name="box38" size="1" id="38" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('38');" />
+        <br />
+
+        <input class="box" name="box39" size="1" id="39" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('39');" />
+        <input class="box" name="box40" size="1" id="40" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('40');" />
+        <input class="box" name="box41" size="1" id="41" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('41');" />
+        <br />
+
+        <input class="box" name="box42" size="1" id="42" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('42');" />
+        <input class="box" name="box43" size="1" id="43" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('43');" />
+        <input class="box" name="box44" size="1" id="44" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('44');" />
+      </div>
+
+      <div class="section" id="section_6">
+        <input class="box" name="box45" size="1" id="45" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('45');" />
+        <input class="box" name="box46" size="1" id="46" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('46');" />
+        <input class="box" name="box47" size="1" id="47" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('47');" />
+        <br />
+
+        <input class="box" name="box48" size="1" id="48" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('48');" />
+        <input class="box" name="box49" size="1" id="49" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('49');" />
+        <input class="box" name="box50" size="1" id="50" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('50');" />
+        <br />
+
+        <input class="box" name="box51" size="1" id="51" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('51');" />
+        <input class="box" name="box52" size="1" id="52" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('52');" />
+        <input class="box" name="box53" size="1" id="53" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('53');" />
+      </div>
+      
+
+      <div class="section" id="section_7">
+        <input class="box" name="box54" size="1" id="54" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('54');" />
+        <input class="box" name="box55" size="1" id="55" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('55');" />
+        <input class="box" name="box56" size="1" id="56" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('56');" />
+        <br />
+
+        <input class="box" name="box57" size="1" id="57" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('57');" />
+        <input class="box" name="box58" size="1" id="58" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('58');" />
+        <input class="box" name="box59" size="1" id="59" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('59');" />
+        <br />
+
+        <input class="box" name="box60" size="1" id="60" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('60');" />
+        <input class="box" name="box61" size="1" id="61" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('61');" />
+        <input class="box" name="box62" size="1" id="62" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('62');" />
+
+      </div>
+
+      <div class="section" id="section_8">
+        <input class="box" name="box63" size="1" id="63" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('63');" />
+        <input class="box" name="box64" size="1" id="64" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('64');" />
+        <input class="box" name="box65" size="1" id="65" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('65');" />
+        <br />
+
+        <input class="box" name="box66" size="1" id="66" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('66');" />
+        <input class="box" name="box67" size="1" id="67" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('67');" />
+        <input class="box" name="box68" size="1" id="68" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('68');" />
+        <br />
+
+        <input class="box" name="box69" size="1" id="69" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('69');" />
+        <input class="box" name="box70" size="1" id="70" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('70');" />
+        <input class="box" name="box71" size="1" id="71" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('71');" />
+
+      </div>
+
+      <div class="section" id="section_9">
+        <input class="box" name="box72" size="1" id="72" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('72');" />
+        <input class="box" name="box73" size="1" id="73" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('73');" />
+        <input class="box" name="box74" size="1" id="74" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('74');" />
+        <br />
+
+        <input class="box" name="box75" size="1" id="75" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('75');" />
+        <input class="box" name="box76" size="1" id="76" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('76');" />
+        <input class="box" name="box77" size="1" id="77" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('77');" />
+        <br />
+
+        <input class="box" name="box78" size="1" id="78" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('78');" />
+        <input class="box" name="box79" size="1" id="79" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('79');" />
+        <input class="box" name="box80" size="1" id="80" value="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('80');" />
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="grid_6" id="controls">
+    <fieldset>
+      <legend>Timer:</legend> 
+      <input name="timer" type="text" id="timer" value="600" size="6" />
+    </fieldset>
+    
+    <fieldset class="difficulty">
+      <legend>Difficulty:</legend>
+      <input type='radio' name="difficulty" onclick="setDiff(1)" value='1' checked="true" />Easy
+      <input type='radio' name="difficulty" onclick="setDiff(2)" value='2' />Normal
+      <input type='radio' name="difficulty" onclick="setDiff(3)" value='2' />Hard
+    </fieldset>
+    
+    <fieldset>
+      <legend>Actions:</legend>
+      <input class="actions" type="button" onclick="startTimer()" value="START" /> <input class="actions" type="button"  onclick="newGame()" value="NEW GAME" />
+    </fieldset>
+    
+    <fieldset>
+      <legend>Cheats</legend>
+      <input class="cheats" type="button" onclick="getHint()" style="" value="HINT" /> <input class="cheats" type="button" onclick="solve()" value="SOLVE" /> <input class="cheats" type="button"  onclick="check()" value="CHECK" />
+    </fieldset>
+    
+    <fieldset>
+      <legend>Score:</legend>
+       <input name="score" disabled="true" id="score" align="left" value="0" size="6" />
+    </fieldset>
+  </div>
+  </form>
+  <div class="clear"></div>
+
+  <div class="grid_9" id="footer">
+    <fieldset>
+      <legend>Puzzle:</legend>
+      <input name="puzzleText" type="text" class="puzzleText" id="puzzleText" value="" size="85" />
+    </fieldset>
+    <fieldset>
+      <legend>Change Style</legend>
+      <input type="button" onclick="switchStyleSheetGecko(1)" value="Normal" /> <input type="button" onclick="switchStyleSheetGecko(2)" value="Having Trouble Seeing?" />
+    </fieldset>
+  </div>
+  <div class="clear"></div>
 
 
-document.write('<table width="332" height="337" border="1" class="tbox">');
-y = 0;
+</div>
 
-for ( u=0;u<3;u++) {
 
-document.write('<tr>');
-for ( s=0;s<3;s++) { 
 
-document.write('<td><table width="89" border="0">');
-
-for ( r=0;r<3;r++) {  
-document.write('<tr>');
-for ( c=0;c<3;c++) 
-{  
-
-document.write('<td width="25"><input name="box'+y+'" type="text" class="tbox2" size="4" id="'+ y+'" VALUE="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('+y+');" style="cursor:pointer" /></td>');
-y++;
-}
-
-document.write('</tr>');
-}
-
-document.write('</table></td>');
-}
-document.write('</tr>');
-}
-document.write('</tr>');
-document.write('</table>');
-
-</script></td>
-<td width="3" rowspan="9">&nbsp;</td>
-<td height="26" colspan="3"><p align="left">TIMER:</p>            </td>
-<td width="48" class="style2">&nbsp;</td>
-<td width="12" rowspan="9" bgcolor="#330066" class="border">&nbsp;</td>
-</tr>
-<tr>
-<td width="9">&nbsp;</td>
-<td height="42" colspan="3" class="buttons style3"><input name="timer" type="text" class="dropD" id="timer" value="600" /></td>
-<td width="48" class="style2">&nbsp;</td>
-</tr>
-<tr>
-<td width="9" rowspan="2">&nbsp;</td>
-<td height="32" colspan="3"><p align="left">Difficulty:
-
-</p>            </td>
-<td width="48" rowspan="2" class="style2">&nbsp;</td>
-</tr>
-<tr align="center">
-<td width="30%" ><input type='radio' name="difficulty" onclick="setDiff(1)" value='1' checked="true" /><br />Easy</td>
-<td width="30%" ><input type='radio' name="difficulty" onclick="setDiff(2)" value='2' /><br />Normal</td>
-<td width="30%" ><input type='radio' name="difficulty" onclick="setDiff(3)" value='2' /><br />Hard</td>
-</tr>
-<tr>
-<td width="9">&nbsp;</td>
-<td height="116" colspan="3"><table width="237" border="1" class="buttons">
-<tr>
-<td width="227">
-<div align="center"><span class="buttons"><input type="button" onclick="startTimer()" value="START" /></span></div></td>
-</tr>
-<tr>
-<td><input type="button" onclick="getHint()" style="" value="HINT" /></td>
-</tr>
-<tr>
-<td><input type="button" onclick="solve()" value="SOLVE" /></td>
-</tr>
-<tr>
-<td><input type="button"  onclick="check()" value="CHECK" /></td>
-</tr>
-<tr>
-<td><input type="button"  onclick="newGame()" value="NEW GAME" /></td>
-</tr>
-</table>          
-<div align="center"></div>
-<div align="center"></div>
-<label for="select"></label>
-<div align="center"></div></td>
-<td width="48" class="style2">&nbsp;</td>
-</tr>
-<tr>
-<td width="9">&nbsp;</td>
-<td height="33" colspan="3"><div align="left">SCORE:</div></td>
-<td width="48" class="style2">&nbsp;</td>
-</tr>
-<tr>
-<td width="9" rowspan="2">&nbsp;</td>
-<td height="1" colspan="3" class="buttons"><input name="score" disabled="true" id="score" align="left" value="0" /></td>
-<td width="48" rowspan="2" class="style2">&nbsp;</td>
-</tr>
-<tr>
-<td height="1" colspan="3"><div align="left" class="cssSwitch">Change style:</div></td>
-</tr>
-<tr>
-<td width="9">&nbsp;</td>
-<td height="38" colspan="2" class="cssSwitch"><p><input type="button" onclick="switchStyleSheetGecko(1)" value="NORMAL" /></p></td>
-<td width="82" class="cssSwitch"><p><input type="button" onclick="switchStyleSheetGecko(2)" value="GREEN" /></p></td>
-<td width="48" class="style2">&nbsp;</td>
-</tr>
-<tr>
-<td height="92" colspan="9" class="dropD"><label for="puzzleText" class="puzzleText">
-<div align="left"><br />
-<span class="style1">Puzzle:</span></div>
-</label>
-<p>
-<input name="puzzleText" type="text" class="puzzleText" id="puzzleText" value="" size="115" />
-</p>
-</td>
-</tr>
-</table></td>
-</tr>
-</table>
-</form>
 </body>
+
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
