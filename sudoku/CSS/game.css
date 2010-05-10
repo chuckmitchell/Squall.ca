@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+input {
+  text-align:center;
+}
+
+div#game div {
+  float: left;
+
+}
+div#game input {
+  font-size: 20px;
+  margin: 2px;
+  margin-top: 2px;
+}
+

@@ -1,0 +1,59 @@
+@charset "utf-8";
+body {
+  background-color: #5C9;
+}
+
+legend {
+  font-size:16px;
+  font-weight: bold;
+}
+
+.difficulty {
+  font-size: 14px;
+}
+
+input#timer {
+  font-size: 30px;
+}
+input#score {
+  font-size: 27px;
+}
+input.actions {
+  font-size: 15px;
+}
+input.box {
+  width: 32px;
+  height: 32px;
+}
+input.cheats {
+  font-size: 10px;
+}
+
+div#header {
+  font-size: 9px;
+  line-height: 10px;
+  color: #f13c73;
+  font-weight: 500;
+}
+div#game input {
+  font-size: 20px;
+  margin: 2px;
+  margin-top: 2px;
+}
+div#controls {
+  margin: 5px 5px 0 0;
+  padding: 5px 0 0 25px;
+  border-style: solid;
+  border-width: 1px 1px 4px 4px;
+}
+div.section {
+  margin: 5px 5px 0 0;
+  padding: 5px;
+  border-style: solid;
+  border-width: 1px 1px 4px 4px;
+
+}
+
+div#footer input {
+  font-size: 12px;
+}
