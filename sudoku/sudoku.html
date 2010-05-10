@@ -69,7 +69,7 @@ document.write('<tr>');
 for ( c=0;c<3;c++) 
 {  
 
-document.write('<td width="25"><input name="box'+y+'" type="text" class="tbox2" size="4" id="'+ y+'" VALUE="" maxlength="1" onchange="this.style.color=\'black\';if (puzzleFull()){finishCheck();};" onclick="boxSelect('+y+');" style="cursor:pointer" /></td>');
+document.write('<td width="25"><input name="box'+y+'" type="text" class="tbox2" size="4" id="'+ y+'" VALUE="" maxlength="1" onkeypress="return noenter();" onchange="newGuess(this);" onclick="boxSelect('+y+');" style="cursor:pointer" /></td>');
 y++;
 }
 
@@ -91,7 +91,7 @@ document.write('</table>');
 </tr>
 <tr>
 <td width="9">&nbsp;</td>
-<td height="42" colspan="3" class="buttons style3"><input name="timer" type="text" class="dropD" id="timer" value="0" /></td>
+<td height="42" colspan="3" class="buttons style3"><input name="timer" type="text" class="dropD" id="timer" value="600" /></td>
 <td width="48" class="style2">&nbsp;</td>
 </tr>
 <tr>
@@ -101,17 +101,17 @@ document.write('</table>');
 </p>            </td>
 <td width="48" rowspan="2" class="style2">&nbsp;</td>
 </tr>
-<tr>
-<td width="76" height="32"><input type='radio' name="difficulty" onclick="setDiff(1)" value='1' checked="true" />Easy</td>
-<td width="55"><input type='radio' name="difficulty" onclick="setDiff(2)" value='2' />Normal</td>
-<td height="32"><input type='radio' name="difficulty" onclick="setDiff(3)" value='2' />Hard</td>
+<tr align="center">
+<td width="30%" ><input type='radio' name="difficulty" onclick="setDiff(1)" value='1' checked="true" /><br />Easy</td>
+<td width="30%" ><input type='radio' name="difficulty" onclick="setDiff(2)" value='2' /><br />Normal</td>
+<td width="30%" ><input type='radio' name="difficulty" onclick="setDiff(3)" value='2' /><br />Hard</td>
 </tr>
 <tr>
 <td width="9">&nbsp;</td>
 <td height="116" colspan="3"><table width="237" border="1" class="buttons">
 <tr>
 <td width="227">
-<div align="center"><span class="buttons"><input type="button" onclick="start()" value="START" /></span></div></td>
+<div align="center"><span class="buttons"><input type="button" onclick="startTimer()" value="START" /></span></div></td>
 </tr>
 <tr>
 <td><input type="button" onclick="getHint()" style="" value="HINT" /></td>
@@ -148,7 +148,7 @@ document.write('</table>');
 <tr>
 <td width="9">&nbsp;</td>
 <td height="38" colspan="2" class="cssSwitch"><p><input type="button" onclick="switchStyleSheetGecko(1)" value="NORMAL" /></p></td>
-<td width="82" class="cssSwitch"><p><input type="button" onclick="switchStyleSheetGecko(2)" value="INVERTED" /></p></td>
+<td width="82" class="cssSwitch"><p><input type="button" onclick="switchStyleSheetGecko(2)" value="GREEN" /></p></td>
 <td width="48" class="style2">&nbsp;</td>
 </tr>
 <tr>
