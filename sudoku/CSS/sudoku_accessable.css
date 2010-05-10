@@ -36,6 +36,10 @@ div#header {
   color: black;
   font-weight: 700;
 }
+div#game {
+  width:470px;
+}
+
 div#game input {
   font-size: 30px;
   margin: 1px;
