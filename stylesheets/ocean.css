@@ -60,38 +60,33 @@ div#squid {
 }
 
 div#lighthouse {
-	/*
   position:absolute;
   top:0px;
   left:-20px;
   width:300px;
   height:90;
   z-index:0;
-  */
 }
 
 div#clouds-left {
-/*  position:absolute;
+  position:absolute;
   top:-50px;
   left:0px;
   z-index:1;
 }
 
 div#clouds-right {
-	/*
   position:absolute;
   top:-42px;
   left:530px;
-  z-index:1;*/
+  z-index:1;
 }
 
 div#sky-patch {
-	/*
   position:absolute;
   top:0px;
   left:970px;
   z-index:2;
-  */
 }
 
 div#footer {
@@ -129,8 +124,8 @@ div#main-intro {
 }
 
 div#main-intro h1 {
-/*   margin: -35px 0 0 0; */
-/*   padding: 0 87px 0 0; */
+   margin: -35px 0 0 0; 
+   padding: 0 87px 0 0; 
 }
 
 /* @Font face declaration  */
