@@ -15,30 +15,35 @@
 </script>
 
 <!-- <link rel="stylesheet" type="text/css" href="./stylesheets/real.css" /> -->
+<link rel="stylesheet" type="text/css" href="stylesheets/960/reset.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/960/text.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/960/960.css" />
 <link rel="stylesheet" type="text/css" href="./stylesheets/ocean.css" />
 
 </head>
 
 <body style="background-color:<?php echo  exec("cat ./tmp/sky3_color.txt"); ?>" >
 
-
+<!-- 
   <div class="skybar" id="sky1" style="background-color:<?php echo exec("cat ./tmp/sky1_color.txt"); ?>" ></div>
   <div class="skybar" id="sky2" style="background-color:<?php echo exec("cat ./tmp/sky2_color.txt"); ?>" ></div>
   <div class="skybar" id="sky3" style="background-color:<?php echo exec("cat ./tmp/sky3_color.txt"); ?>" ></div>
+-->
+
+  <div id="header">
+    <div id="clouds-left">
+      <img src="./images/clouds_left.png" alt="clouds" />
+    </div>
   
   
-  <div id="clouds-left">
-    <img src="./images/clouds_left.png" alt="clouds" />
-  </div>
-
-
-  <div id="lighthouse">
-    <img src="./tmp/cropped_peggy.jpg" alt="Peggy's cove" />
-  </div>
-
-  <div id="clouds-right">
-    <img src="./images/clouds_right.png" alt="clouds" />
-  </div>
+    <div id="lighthouse">
+      <img src="./tmp/cropped_peggy.jpg" alt="Peggy's cove" />
+    </div>
+  
+    <div id="clouds-right">
+      <img src="./images/clouds_right.png" alt="clouds" />
+    </div>
+  </div>	
 
   <div id="background"></div>
 

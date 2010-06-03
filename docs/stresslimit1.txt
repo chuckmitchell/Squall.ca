@@ -1,0 +1,55 @@
+Hey Charles,
+
+How bout we try a little excercise right away? Want to make this into html/css? We had said $30/hr how many hours do you think this would take you? Can you be super-meticulous with front-end stuff like this [meaning is this / can this be your forté]? Very minimal splash page.
+
+Requirements:
+* cleanliness/slickness is the most important. This is our [only] client-facing contact point, needs to be slick right away visually and if people view source
+* transparent boxes with text on top should come from semi-transparent background pngs
+* containers cannot be fixed-height
+* all text must be webtext except stresslimit logo, which must be h1 with text-indent
+* main content to be centred on the beige background
+* links are:
+  click here: mailto:info@stresslimitdesign.com
+  startcooking: startcooking.com
+  Chris Brogan: chrisbrogan.com
+  Julien: inoveryourhead.net Smith: juliensmith.com
+  meylah: meylah.com
+  Environmental Defense Fund: stresslimitdesign.com/power-of-scale
+
+Let me know how this sits with you....
+
+Colin
+
+
++++ SENT Mon May 31 23:36:43 EDT 2010 +++
+
+
+Hi Colin,
+
+I'll work up a time estimate.
+This is a perfect exercise to get familiar with your other work.
+
+Couple questions:
+1. Webtext? Does that mean the same as plain-text, as compared to image embedded text?
+2. Could you send me a png screenshot to verify that the pdf file is as you see it in photoshop?
+
+
+Cheers
+-Charles
+
+
++++ NOt SENT +++
+
+
+Hi Colin,
+
+Here's my time estimate.
+
+1 hour xhtml.
+2 hours design
+4 hours javascript.
+1 hour testing
+
+8 hours
+
+-C
