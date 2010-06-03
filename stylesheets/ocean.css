@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
+a {
+  color:#fff;
+}
+
 body {
   font-size: 80%
 }
